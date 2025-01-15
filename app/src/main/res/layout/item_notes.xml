@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNotes"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/textViewPoppinRegularFont"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:text="@string/the_cancellation_is_possible_before_24_hours_only"
+
+        android:textColor="@color/black"
+        android:textSize="@dimen/tv_13sp" />
+</layout>
+

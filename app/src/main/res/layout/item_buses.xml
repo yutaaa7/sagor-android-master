@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:id="@+id/relat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/stroke_theme_blue"
+            android:padding="@dimen/_10dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/ivBus"
+                android:layout_width="@dimen/_80dp"
+                android:layout_height="@dimen/_80dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/mask"
+                app:riv_corner_radius="@dimen/_10dp"
+                app:riv_oval="false" />
+
+            <View
+                android:id="@+id/v5"
+                android:layout_width="@dimen/_1dp"
+                android:layout_height="@dimen/_80dp"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_toEndOf="@+id/ivBus"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_toEndOf="@+id/v5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:layout_gravity="center"
+                        android:src="@drawable/black_bus"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVehicleName"
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:text="@string/coaster"
+                        android:layout_gravity="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:layout_gravity="center"
+                        android:src="@drawable/user_black"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCapacity"
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:text="@string/_48_people_cap"
+                        android:layout_gravity="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@null"
+                        android:layout_gravity="center"
+                        android:src="@drawable/price"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPrice"
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:text="@string/_20_00_kd"
+                        android:layout_gravity="center"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:src="@drawable/dotted_line"/>
+
+    </LinearLayout>
+
+</layout>

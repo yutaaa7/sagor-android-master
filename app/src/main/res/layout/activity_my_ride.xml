@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <!-- <include
+            android:id="@+id/headerMyRide"
+            layout="@layout/common_toolbar" />
+
+
+
+        <fragment
+            android:id="@+id/frag_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <!-- Header Layout -->
+            <include
+                android:id="@+id/headerMyRide"
+                layout="@layout/common_toolbar"
+                android:layout_marginTop="@dimen/_40dp
+"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Map Fragment -->
+            <fragment
+                android:id="@+id/frag_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/headerMyRide"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/bottomSheetRide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_bottom_sheet"
+            android:elevation="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="@dimen/_50dp"
+                        android:layout_height="@dimen/_5dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_16dp"
+                        android:background="@color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRideConfirmed"
+                        style="@style/textViewPoppinBoldFont"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_15dp"
+                        android:layout_marginTop="@dimen/_20dp"
+                        android:layout_toEndOf="@+id/ivBus"
+                        android:text="@string/ride_confirmed_on_19_march_2024"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_16sp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/viewConfirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_16dp"
+                        android:background="@color/black"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginTop="@dimen/_30dp"
+
+                        android:layout_marginEnd="@dimen/_16dp">
+
+                        <ImageView
+                            android:id="@+id/ivBus"
+                            android:layout_width="@dimen/_70dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentTop="true"
+                            android:contentDescription="@null"
+                             />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvVehicleName"
+                            style="@style/textViewPoppinSemiBold"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="@dimen/_2dp"
+                            android:layout_toEndOf="@+id/ivBus"
+                            android:layout_toLeftOf="@+id/btBooked"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_16sp" />
+
+                        <TextView
+                            android:id="@+id/btBooked"
+                            style="@style/textViewPoppinSemiBold"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/solid_blu"
+                            android:paddingStart="@dimen/_35dp"
+                            android:paddingTop="@dimen/_10dp"
+                            android:paddingEnd="@dimen/_35dp"
+                            android:paddingBottom="@dimen/_10dp"
+                            android:text="@string/booked"
+                            android:textColor="@color/white" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBookingId"
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginEnd="@dimen/_16dp"
+                        android:text=""
+                        android:textColor="@color/gray_7E7E7E"
+                        android:textSize="@dimen/tv_16sp" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardChild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_16dp"
+                        android:elevation="@dimen/_8dp"
+                        android:shadowColor="@color/gray"
+                        android:shadowRadius="10"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/_10dp"
+                        app:cardElevation="@dimen/_8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_10dp"
+                                android:layout_marginBottom="@dimen/_10dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:text="@string/time"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvTime"
+                                        style="@style/textViewPoppinSemiBold"
+                                        android:layout_marginStart="@dimen/_5dp"
+                                        android:text=""
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:text="@string/date"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvstartDate"
+                                        style="@style/textViewPoppinSemiBold"
+                                        android:layout_marginStart="@dimen/_5dp"
+                                        android:text=""
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+
+                                </LinearLayout>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_width="match_parent"
+                                    android:text="@string/time"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/tv_16sp" />
+
+
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1dp"
+                                android:layout_marginStart="@dimen/minus_10dp"
+                                android:layout_marginEnd="@dimen/minus_10dp"
+                                android:layout_marginBottom="@dimen/_20dp"
+                                android:background="@color/theme_blue" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20dp"
+                                android:layout_marginEnd="@dimen/_20dp"
+                                android:layout_marginBottom="@dimen/_20dp">
+
+                                <ImageView
+                                    android:id="@+id/ivDotCircle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginTop="@dimen/_10dp"
+                                    android:src="@drawable/dot_circle" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="@dimen/_10dp"
+                                    android:layout_toEndOf="@id/ivDotCircle"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+
+                                        android:id="@+id/tvCurrentLocation"
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_width="match_parent"
+                                        android:text=""
+                                        android:maxLines="1"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvPickupLocationAddress"
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_width="match_parent"
+                                        android:maxLines="2"
+
+                                        android:text=""
+                                        android:textColor="@color/theme_blue"
+                                        android:textSize="@dimen/tv_16sp" />
+
+
+                                </LinearLayout>
+
+                                <View
+                                    android:id="@+id/line"
+                                    android:layout_width="@dimen/_1dp"
+                                    android:layout_height="@dimen/_50dp"
+                                    android:layout_below="@+id/ivDotCircle"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/_5dp"
+                                    android:background="@color/black" />
+
+                                <ImageView
+                                    android:id="@+id/ivMapPin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/line"
+                                    android:layout_alignParentStart="true"
+                                    android:src="@drawable/map_pin_blue" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10dp"
+                                    android:layout_marginTop="@dimen/_65dp"
+                                    android:layout_toEndOf="@id/ivMapPin"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvDestination"
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_width="match_parent"
+                                        android:text=""
+                                        android:textColor="@color/black"
+                                        android:maxLines="1"
+
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvDropLocationAddress"
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_width="match_parent"
+                                        android:maxLines="2"
+
+                                        android:text=""
+                                        android:textColor="@color/theme_blue"
+
+                                        android:textSize="@dimen/tv_16sp" />
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginBottom="@dimen/_40dp"
+                        android:src="@drawable/dotted_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_22dp"
+                                android:layout_height="@dimen/_22dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/clock" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvApproxTime"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_14sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/theme_blue" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/user_blue" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvbusSeats"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_14sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/theme_blue" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/bus_icon" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTripMode"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_14sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/theme_blue" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_22dp"
+                                android:layout_height="@dimen/_22dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/distance" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDistance"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginBottom="@dimen/_20dp"
+                        android:src="@drawable/dotted_line" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardDriver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginTop="@dimen/_16dp"
+                        android:layout_marginEnd="@dimen/_16dp"
+                        android:layout_marginBottom="@dimen/_100dp"
+                        android:elevation="@dimen/_8dp"
+                        android:shadowColor="@color/gray"
+                        android:shadowRadius="10"
+                        android:visibility="gone"
+                        app:cardCornerRadius="@dimen/_10dp"
+                        app:cardElevation="@dimen/_8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/textViewPoppinSemiBold"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/_15dp"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:layout_toEndOf="@+id/ivBus"
+                                android:text="@string/drivers_details"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_18sp" />
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_3dp"
+                                android:layout_marginStart="@dimen/minus_10dp"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/minus_10dp"
+                                android:layout_marginBottom="@dimen/_20dp"
+                                android:src="@drawable/dotted_line" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_10dp">
+
+
+                                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/ivDriverImage1"
+                                    android:layout_width="@dimen/_60dp"
+                                    android:layout_height="@dimen/_60dp"
+                                    android:layout_alignParentStart="true"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/mask"
+                                    app:riv_corner_radius="@dimen/_10dp"
+                                    app:riv_oval="true" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="@dimen/_5dp"
+                                    android:layout_toEndOf="@+id/ivDriverImage1"
+                                    android:orientation="vertical">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/textViewPoppinBoldFont"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_toEndOf="@+id/ivBus"
+                                        android:text=""
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            style="@style/textViewPoppinRegularFont"
+                                            android:layout_alignParentTop="true"
+                                            android:layout_toEndOf="@+id/ivBus"
+                                            android:text="@string/rating"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/tv_16sp" />
+
+                                        <RatingBar
+                                            android:id="@+id/rating"
+                                            style="?android:attr/ratingBarStyleSmall"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:isIndicator="true"
+                                            android:numStars="5"
+                                            android:stepSize="0.1" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginStart="@dimen/_15dp"
+                                        android:layout_toEndOf="@+id/ivBus"
+                                        android:text="@string/bus_number"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        style="@style/textViewPoppinBoldFont"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginStart="@dimen/_15dp"
+                                        android:layout_toEndOf="@+id/ivBus"
+                                        android:text=""
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tv_16sp" />
+
+
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1dp"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:background="@color/gray_E6E6E6" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10dp"
+                                android:orientation="horizontal">
+
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivWhatsapp"
+                                        android:layout_width="@dimen/_22dp"
+                                        android:layout_height="@dimen/_22dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginEnd="@dimen/_8dp"
+                                        android:contentDescription="@null"
+                                        android:src="@drawable/whatsapp_icon" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvWhatsapphere"
+
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_8dp"
+                                        android:text="@string/chat"
+                                        android:textColor="@color/gray_7E7E7E"
+                                        android:textSize="@dimen/tv_15sp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="@dimen/_1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/gray_E6E6E6" />
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/_0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10dp">
+
+                                    <ImageView
+                                        android:id="@+id/ivCallDriver"
+                                        android:layout_width="@dimen/_22dp"
+                                        android:layout_height="@dimen/_22dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginEnd="@dimen/_8dp"
+
+                                        android:contentDescription="@null"
+                                        android:src="@drawable/phone_call" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvCallDriver"
+                                        style="@style/textViewPoppinRegularFont"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_8dp"
+                                        android:text="@string/call"
+
+                                        android:textColor="@color/gray_7E7E7E"
+                                        android:textSize="@dimen/tv_15sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <LinearLayout
+                        android:id="@+id/llRequestSuccessful"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinSemiBold"
+                            android:layout_gravity="center"
+                            android:layout_toEndOf="@+id/ivBus"
+                            android:text="@string/request_successfully_placed"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_18sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinLightFont"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_30dp"
+                            android:layout_marginEnd="@dimen/_30dp"
+                            android:gravity="center"
+                            android:text="@string/we_will_update_you_with_driver_s_contact_details"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_18sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btGoToHome"
+                            style="@style/themeBlueButtonView"
+                            android:layout_width="match_parent"
+                            android:layout_marginStart="@dimen/_36dp"
+                            android:layout_marginTop="@dimen/_50dp"
+                            android:layout_marginEnd="@dimen/_36dp"
+                            android:layout_marginBottom="@dimen/_100dp"
+                            android:text="@string/go_to_home" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomSheetForDriverOnWay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_bottom_sheet"
+            android:elevation="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBusReady"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text=""
+                android:textColor="@color/gray_7E7E7E"
+                android:textSize="@dimen/tv_16sp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/dotted_line" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMeetText"
+                style="@style/textViewPoppinSemiBold"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="@dimen/tv_18sp"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTimeAway"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text=""
+                android:textColor="@color/red_D21320"
+                android:textSize="@dimen/tv_16sp"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginStart="@dimen/_36dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_36dp"
+                android:background="@drawable/stroke_gray">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_90dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/solid_blue_with_left_corners">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/bus_white" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_5dp"
+                    android:src="@drawable/profile_user" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_36dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_marginEnd="@dimen/_36dp"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDriverLocation"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="@color/gray_7E7E7E"
+                    android:textSize="@dimen/tv_16sp"
+                    android:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserName"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:textColor="@color/gray_7E7E7E"
+                    android:textSize="@dimen/tv_16sp"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/dotted_line" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_36dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_36dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/bus_model"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBusModel"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_36dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_36dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/plate_number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlateNo"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/dotted_line" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btReportAnIssue"
+                style="@style/themeRedButtonView"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_36dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_36dp"
+                android:layout_marginBottom="@dimen/_100dp"
+                android:text="@string/report_an_issue" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/bottomSheetForRideInProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_bottom_sheet"
+            android:elevation="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+            <View
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHelloUser"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text=""
+                android:textColor="@color/gray_7E7E7E"
+                android:textSize="@dimen/tv_16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:src="@drawable/dotted_line" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:text="Ride in Progress"
+                android:textColor="@color/green"
+                android:textSize="@dimen/tv_18sp" />
+
+
+            <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_16dp"
+                android:elevation="@dimen/_8dp"
+                android:shadowColor="@color/gray"
+                android:shadowRadius="10"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardElevation="@dimen/_8dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDistanace"
+                            style="@style/textViewPoppinBoldFont"
+                            android:layout_width="wrap_content"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text=""
+                            android:textColor="@color/theme_blue"
+                            android:textSize="@dimen/tv_16sp" />
+
+                        <ImageView
+                            android:id="@+id/ivDotCircle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginTop="@dimen/_10dp"
+                            android:src="@drawable/dot_circle" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:layout_toStartOf="@+id/tvDistanace"
+                            android:layout_toEndOf="@id/ivDotCircle1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCurrentLocation1"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_width="match_parent"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_16sp" />
+
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/line1"
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_below="@+id/ivDotCircle1"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:background="@color/black" />
+
+                        <ImageView
+                            android:id="@+id/ivMapPin1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line1"
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/map_pin_blue" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:layout_marginTop="@dimen/_65dp"
+                            android:layout_toEndOf="@id/ivMapPin1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDestination1"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_width="match_parent"
+                                android:text=""
+                                android:textColor="@color/black"
+
+                                android:textSize="@dimen/tv_16sp" />
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/trip_date"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTripDate"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:src="@drawable/dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/type"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tripType"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:src="@drawable/dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/pickup_time"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTimePik"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:src="@drawable/dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:visibility="gone"
+                android:layout_marginEnd="@dimen/_16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/payment"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPayment"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDriverInProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_60dp"
+                android:elevation="@dimen/_8dp"
+                android:shadowColor="@color/gray"
+                android:shadowRadius="10"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_10dp"
+                app:cardElevation="@dimen/_8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/_15dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_toEndOf="@+id/ivBus"
+                        android:text="@string/drivers_details"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/minus_10dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/minus_10dp"
+                        android:layout_marginBottom="@dimen/_20dp"
+                        android:src="@drawable/dotted_line" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp">
+
+
+                        <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/ivDriverImage"
+                            android:layout_width="@dimen/_60dp"
+                            android:layout_height="@dimen/_60dp"
+                            android:layout_alignParentStart="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/mask"
+                            app:riv_corner_radius="@dimen/_10dp"
+                            app:riv_oval="true" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/ivDriverImage"
+                            android:orientation="vertical">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDriverName"
+                                style="@style/textViewPoppinBoldFont"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_toEndOf="@+id/ivBus"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_16sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="@dimen/_5dp"
+                                    android:layout_toEndOf="@+id/ivBus"
+                                    android:text="@string/rating"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/tv_16sp" />
+
+                                <RatingBar
+                                    android:id="@+id/rating1"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:isIndicator="true"
+                                    android:numStars="5"
+                                    android:stepSize="0.1" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_toEndOf="@+id/ivBus"
+                                android:text="@string/bus_number"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_16sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBusNoDriver"
+                                style="@style/textViewPoppinBoldFont"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:layout_toEndOf="@+id/ivBus"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tv_16sp" />
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:background="@color/gray_E6E6E6" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10dp"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10dp">
+
+                            <ImageView
+                                android:id="@+id/whatsapp"
+                                android:layout_width="@dimen/_22dp"
+                                android:layout_height="@dimen/_22dp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/_8dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/whatsapp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDriverChat"
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_8dp"
+                                android:text="@string/chat"
+                                android:textColor="@color/gray_7E7E7E"
+                                android:textSize="@dimen/tv_15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_E6E6E6" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10dp">
+
+                            <ImageView
+                                android:id="@+id/ivCall"
+
+                                android:layout_width="@dimen/_22dp"
+                                android:layout_height="@dimen/_22dp"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/_8dp"
+
+                                android:contentDescription="@null"
+                                android:src="@drawable/phone_call" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDriverCall"
+
+                                style="@style/textViewPoppinRegularFont"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_8dp"
+                                android:text="@string/call"
+
+                                android:textColor="@color/gray_7E7E7E"
+                                android:textSize="@dimen/tv_15sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray_E6E6E6" />
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btReportRideInProgress"
+                                style="@style/themeRedButtonView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_38dp"
+
+                                android:text="@string/report" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomSheetForRideCompleted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_bottom_sheet"
+            android:elevation="@dimen/_10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+            <View
+                android:layout_width="@dimen/_50dp"
+                android:layout_height="@dimen/_5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@color/black" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_16dp"
+                android:text="@string/ride_completed"
+                android:textColor="@color/theme_blue"
+                android:textSize="@dimen/tv_25sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="@string/your_have_arrived_at_your_destination"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_3dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:src="@drawable/dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/distance"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDistanceForComplete"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/arriving_time"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tripModeForComplete"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text=""
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_30dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_60dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btReportCompleted"
+                    style="@style/themeRedButtonView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:text="@string/report" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btRateTrip"
+                    style="@style/themeBlueButtonView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:text="@string/rate_your_trip" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

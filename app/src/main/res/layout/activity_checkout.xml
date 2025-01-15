@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.checkout.CheckoutActivity">
+
+        <include
+            android:id="@+id/checkoutHeader"
+            layout="@layout/common_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardChild"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16dp"
+                    android:elevation="@dimen/_8dp"
+                    android:shadowColor="@color/gray"
+                    android:shadowRadius="10"
+                    app:cardCornerRadius="@dimen/_10dp"
+                    app:cardElevation="@dimen/_8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_10dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/ivDotCircle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginTop="@dimen/_10dp"
+                                android:src="@drawable/dot_circle" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_toEndOf="@id/ivDotCircle"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCurrentLocationTitle"
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_width="match_parent"
+                                    android:text="Design Master"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/tv_16sp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCurrentLocationAddress"
+android:maxLines="2"
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_width="match_parent"
+                                    android:text="Al Nouf Tower, Sharq kuwait"
+                                    android:textColor="@color/theme_blue"
+                                    android:textSize="@dimen/tv_16sp" />
+
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/line"
+                                android:layout_width="@dimen/_1dp"
+                                android:layout_height="@dimen/_50dp"
+                                android:layout_below="@+id/ivDotCircle"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:background="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/ivMapPin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/line"
+                                android:layout_alignParentStart="true"
+                                android:src="@drawable/map_pin_blue" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginTop="@dimen/_65dp"
+                                android:layout_toEndOf="@id/ivMapPin"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvDestination"
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_width="match_parent"
+                                    android:text="Avenues"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/tv_16sp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvDestinationAddress"
+                                    style="@style/textViewPoppinRegularFont"
+                                    android:layout_width="match_parent"
+                                    android:maxLines="2"
+                                    android:text="Al rai Road Kuwait city jhjdfdsgfydfgdhgfdhgfhdgfhdgfhdgfhdgfhdgfhgdghfdghgfhdgfhdgfhdghfgsdhfgsdchdgfhdgfsdhgfhdgfhdgfhgsdhfgsdhfgdhfgdjhfgdhfgdhfgdhg"
+                                    android:textColor="@color/theme_blue"
+                                    android:textSize="@dimen/tv_16sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTripDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:layout_marginEnd="@dimen/_30dp" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/type"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTripType"
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:src="@drawable/dotted_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/pickup_time"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickUpTime"
+                        style="@style/textViewPoppinSemiBold"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:src="@drawable/dotted_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/pickup_date"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPickUpdate"
+                        style="@style/textViewPoppinSemiBold"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:src="@drawable/dotted_line" />
+
+                <LinearLayout
+                    android:id="@+id/llReturnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="@dimen/_20dp"
+                            android:text="@string/return_time"
+                            android:textColor="@color/theme_blue"
+                            android:textSize="@dimen/tv_15sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvReturnTime"
+                            style="@style/textViewPoppinSemiBold"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:paddingEnd="@dimen/_20dp"
+                            android:text="One Way"
+                            android:textColor="@color/theme_blue"
+                            android:textSize="@dimen/tv_15sp" />
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_16dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:src="@drawable/dotted_line" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="@dimen/_20dp"
+                            android:text="@string/return_date"
+                            android:textColor="@color/theme_blue"
+                            android:textSize="@dimen/tv_15sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvReturnDate"
+                            style="@style/textViewPoppinSemiBold"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:paddingEnd="@dimen/_20dp"
+                            android:text="One Way"
+                            android:textColor="@color/theme_blue"
+                            android:textSize="@dimen/tv_15sp" />
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_16dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:src="@drawable/dotted_line" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/bus"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBusName"
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:src="@drawable/dotted_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/distance"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDistance"
+                        style="@style/textViewPoppinSemiBold"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+                
+                <LinearLayout
+                    android:id="@+id/llDiscountView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:layout_marginBottom="@dimen/_10dp"
+                    android:src="@drawable/dotted_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/discount"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDisCountedPrice"
+                        style="@style/textViewPoppinSemiBold"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="One Way"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/tv_15sp" />
+
+
+                </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/_16dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_16dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:src="@drawable/dotted_line" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:paddingStart="@dimen/_20dp"
+                            android:text="@string/price_after_discount"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/tv_15sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPriceAfterDiscount"
+                            style="@style/textViewPoppinSemiBold"
+
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+
+                            android:paddingEnd="@dimen/_20dp"
+                            android:text="One Way"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/tv_15sp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPaymentMethods"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16dp" />-->
+
+                <include
+                    android:id="@+id/payment"
+                    layout="@layout/item_payment_methods" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPromo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16dp"
+                    android:elevation="@dimen/_8dp"
+                    android:shadowColor="@color/gray"
+                    android:shadowRadius="10"
+                    app:cardCornerRadius="@dimen/_10dp"
+                    app:cardElevation="@dimen/_8dp">
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_65dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPromoCode"
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:hint="@string/promo"
+                            android:paddingStart="@dimen/_20dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textSize="@dimen/tv_16sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvRemoveCode"
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/ivForwardPromo"
+                            android:hint="Remove"
+                            android:visibility="gone"
+                            android:padding="@dimen/_10dp"
+
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/tv_16sp" />
+
+
+                        <ImageView
+                            android:id="@+id/ivForwardPromo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_20dp"
+                            android:src="@drawable/right"
+                            app:tint="@color/black" />
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginStart="@dimen/_16dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:layout_marginEnd="@dimen/_16dp"
+                    android:background="@drawable/solid_sky_blue">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="@dimen/_20dp"
+                        android:text="@string/total_price"
+                        android:textColor="@color/theme_blue"
+                        android:textSize="@dimen/tv_18sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPrice"
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/solid_theme_blue"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_20dp"
+                        android:paddingEnd="@dimen/_20dp"
+                        android:text="120.000 KWD"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btPayment"
+                    style="@style/themeBlueButtonView"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/_30dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:layout_marginEnd="@dimen/_30dp"
+                    android:layout_marginBottom="@dimen/_20dp"
+
+                    android:text="@string/payout_with" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

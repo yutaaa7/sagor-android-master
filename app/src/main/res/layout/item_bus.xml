@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout
+        android:id="@+id/llBusOfChild"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35dp"
+        android:layout_marginEnd="@dimen/_35dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llBusBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10dp"
+            android:background="@drawable/stroke_theme_blue"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBusNumber"
+                style="@style/textViewPoppinSemiBold"
+                android:layout_gravity="center|start"
+                android:layout_toEndOf="@+id/ivSchoolImage"
+                android:text="BUS -D"
+                android:textColor="@color/theme_blue"
+                android:textSize="@dimen/tv_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDescription"
+                style="@style/textViewPoppinSemiBold"
+                android:layout_gravity="center|start"
+                android:layout_toEndOf="@+id/ivSchoolImage"
+                android:text="School-Hawally block 1-Block 1-Salmiya"
+                android:layout_marginTop="@dimen/_10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_13sp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

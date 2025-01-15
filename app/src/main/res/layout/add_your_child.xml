@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_8dp"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:cardElevation="@dimen/_8dp"
+        android:shadowColor="@color/gray"
+        android:shadowRadius="10"
+        android:id="@+id/cardChild">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_16dp"
+
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinSemiBold"
+                android:text="@string/add_your_child"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_18sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinLightFont"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="@string/you_can_add_your_child_if_your_school_is_using_sagor_services"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_15sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btProceedChild"
+                style="@style/themeBlueButtonView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="@string/proceed" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btNotAddChild"
+                style="@style/themeGrayButtonView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20dp"
+                android:text="@string/don_t_show_this_message_again"
+                android:textColor="@color/gray_7E7E7E" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

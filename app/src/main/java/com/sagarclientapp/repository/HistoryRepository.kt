@@ -1,0 +1,62 @@
+package com.sagarclientapp.repository
+
+import com.sagarclientapp.api.ApiService
+import com.sagarclientapp.api.Response
+import com.sagarclientapp.api.ResponseHandler
+import com.sagarclientapp.model.HistoryResponse
+import com.sagarclientapp.model.PagesResponse
+import com.sagarclientapp.utils.AppConstants
+import javax.inject.Inject
+
+class HistoryRepository @Inject constructor(private val apiService: ApiService) {
+    private val responseHandler: ResponseHandler by lazy {
+        ResponseHandler()
+    }
+
+    suspend fun history(
+
+        authorization: String,
+        user_id: String,
+        booking_status: String,
+    ): Response<HistoryResponse> {
+
+        return try {
+            responseHandler.handleSuccess(
+                apiService.bookingHistory(
+
+                    authorization = authorization,
+                    user_id = user_id,
+                    booking_status = booking_status
+                ),
+                AppConstants.USER_LOGIN
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+            responseHandler.handleException(e, AppConstants.USER_LOGIN)
+        }
+    }
+
+    suspend fun scheduledTripList(
+
+        authorization: String,
+        user_id: String,
+    ): Response<HistoryResponse> {
+
+        return try {
+            responseHandler.handleSuccess(
+                apiService.ScheduledTripsList(
+
+                    authorization = authorization,
+                    user_id = user_id,
+
+                ),
+                AppConstants.USER_LOGIN
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+            responseHandler.handleException(e, AppConstants.USER_LOGIN)
+        }
+    }
+
+
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_18dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:elevation="@dimen/_8dp"
+        android:shadowColor="@color/gray"
+        android:shadowRadius="10"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:cardElevation="@dimen/_8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPaymentName"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/_20dp"
+                android:text="@string/select_payment_type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_16sp" />
+
+            <ImageView
+                android:id="@+id/ivPaymentType"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:visibility="gone"
+
+                android:layout_toStartOf="@+id/ivForward"
+                android:src="@drawable/apple" />
+
+
+
+
+            <ImageView
+                android:id="@+id/ivForward"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:src="@drawable/right"
+                app:tint="@color/black" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

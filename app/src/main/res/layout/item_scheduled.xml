@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16dp"
+        android:elevation="@dimen/_8dp"
+        android:shadowColor="@color/gray"
+        android:shadowRadius="10"
+        android:visibility="visible"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:cardElevation="@dimen/_8dp">
+
+
+        <LinearLayout
+            android:id="@+id/llScheduled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- TextView 1 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Design Master "
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:lines="3"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+                <!-- RelativeLayout for connecting line -->
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/dot_circle" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/_5dp"
+                        android:layout_marginEnd="@dimen/_5dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/iv2"
+                        android:layout_toEndOf="@+id/iv1"
+                        android:src="@drawable/dotted_line" />
+
+                    <ImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/dot_circle" />
+                </RelativeLayout>
+
+                <!-- TextView 2 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Avenues"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    android:lines="3"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+            </LinearLayout>
+
+
+
+
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv1"
+
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Design Master jhjxgchghchgchdjgchcdhcgh"
+                    android:maxLength="15"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:layout_toStartOf="@+id/tv2"
+                    android:layout_toEndOf="@+id/tv1">
+
+                    <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/dot_circle" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3dp"
+                        android:layout_marginStart="@dimen/_5dp"
+                        android:layout_marginEnd="@dimen/_5dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/iv2"
+                        android:layout_toEndOf="@+id/iv1"
+                        android:src="@drawable/dotted_line" />
+
+                    <ImageView
+                        android:id="@+id/iv2"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/dot_circle" />
+
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv2"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Avenues"
+                    android:maxLength="15"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/pickup_time"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickUpTime"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="10:00 AM"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/pickup_date"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date"
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="17th April 2024"
+                    android:textColor="@color/theme_blue"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".ui.login.TurnOnNotificationActivity">
+
+        <include
+            android:id="@+id/notificationHeader"
+            layout="@layout/common_login_header"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btSendNotification"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_70dp"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:text="@string/notify_me" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btNotSendNotification"
+            style="@style/themeBlueButtonView"
+            android:background="@drawable/solid_light_gray"
+            android:layout_width="match_parent"
+            android:textColor="@color/theme_blue"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:text="@string/don_t_notify_me" />
+
+    </LinearLayout>
+</layout>

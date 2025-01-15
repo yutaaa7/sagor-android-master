@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout
+    android:id="@+id/llPlace"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPin"
+            android:contentDescription="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/map_pin_blue"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrimaryLocation"
+            style="@style/textViewPoppinSemiBold"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:text="@string/sunrise_restaurant"
+            android:layout_toEndOf="@+id/ivPin"/>
+
+        <ImageView
+            android:id="@+id/ivfav"
+            android:contentDescription="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/_10dp"
+            android:src="@drawable/heart_fill"/>
+
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFullAddress"
+        style="@style/textViewPoppinRegularFont"
+        android:layout_marginTop="@dimen/_10dp"
+        android:textColor="@color/black"
+        android:text="@string/phase_4_sheikh_zayed_bin_sultan_al_nahyan_rd_avenues_mall_92000"
+        android:textSize="@dimen/tv_16sp" />
+
+    <LinearLayout
+        android:id="@+id/llDistanceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15dp"
+
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinRegularFont"
+            android:textColor="@color/black"
+            android:text="@string/distance"
+            android:textSize="@dimen/tv_16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinRegularFont"
+            android:textColor="@color/black"
+            android:text="@string/_1_5km"
+            android:layout_marginStart="@dimen/_20dp"
+            android:textSize="@dimen/tv_16sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_3dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:src="@drawable/dotted_line"/>
+
+</LinearLayout>
+</layout>

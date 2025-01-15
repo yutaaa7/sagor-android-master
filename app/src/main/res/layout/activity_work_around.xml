@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_blue"
+        tools:context=".ui.workaround.WorkAroundActivity">
+
+        <com.sagarclientapp.utils.NonSwipeableViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBottom" />
+
+        <RelativeLayout
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_50dp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivdot1"
+
+                    android:layout_width="@dimen/_10dp"
+                    android:layout_height="@dimen/_10dp"
+                    android:src="@drawable/tab_indicator_selected" />
+
+                <ImageView
+                    android:id="@+id/ivdot2"
+                    android:layout_width="@dimen/_10dp"
+                    android:layout_height="@dimen/_10dp"
+                    android:layout_marginStart="@dimen/_2dp"
+                    android:src="@drawable/tab_indicator_default" />
+
+                <ImageView
+                    android:id="@+id/ivdot3"
+
+                    android:layout_width="@dimen/_10dp"
+                    android:layout_height="@dimen/_10dp"
+                    android:layout_marginStart="@dimen/_2dp"
+
+                    android:src="@drawable/tab_indicator_default" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next"
+                style="@style/lightBlueButtonView"
+                android:layout_width="@dimen/_174dp"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="1"
+                android:text="@string/next"
+                android:textColor="@color/theme_blue" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:background="@drawable/solid_bottom_white_curve">
+
+    <ImageView
+        android:id="@+id/ivCancelDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@null"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:padding="@dimen/_10dp"
+        android:src="@drawable/close_12" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btReschedule"
+        style="@style/themeBlueButtonView"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_36dp"
+        android:layout_marginEnd="@dimen/_36dp"
+        android:layout_marginTop="@dimen/_36dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:text="@string/reschedule_ride" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btCancel"
+        style="@style/themeRedButtonView"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_36dp"
+        android:layout_marginEnd="@dimen/_36dp"
+        android:layout_marginBottom="@dimen/_36dp"
+        android:text="@string/cancel_ride" />
+
+    <View
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:background="@color/black" />
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.checkout.PromoCodeActivity">
+
+        <include
+            android:id="@+id/headerPromoCode"
+            layout="@layout/common_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60dp"
+            android:layout_below="@+id/headerPromoCode"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_40dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPromoCode"
+                style="@style/EditTextPoppinRegularFont"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10dp"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:padding="@dimen/_13dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPromoCode"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/stroke_edit_text"
+                android:gravity="center|start"
+                android:padding="@dimen/_5dp"
+                android:paddingStart="@dimen/_16dp"
+
+                android:text="@string/enter_promo_code"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/tv_12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/promoCodeLable"
+                style="@style/textViewPoppinRegularFont"
+                android:layout_marginStart="@dimen/_8dp"
+                android:background="@color/white"
+                android:padding="@dimen/_5dp"
+                android:text="@string/promo_code"
+                android:textColor="@color/edit_text_title"
+                android:textSize="@dimen/tv_12sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/etPromoCode"
+                app:layout_constraintLeft_toLeftOf="@+id/etPromoCode"
+                app:layout_constraintTop_toTopOf="@+id/etPromoCode" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btActivateCode"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_50dp"
+android:clickable="false"
+            android:enabled="false"
+            android:background="@drawable/solid_disable_button"
+            android:text="@string/activate_code" />
+
+
+    </RelativeLayout>
+</layout>

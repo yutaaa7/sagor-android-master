@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@null"
+        android:padding="@dimen/_10dp"
+        android:src="@drawable/close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btSubmitDate"
+        android:layout_below="@+id/ivClose"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinSemiBold"
+            android:layout_marginStart="@dimen/_16dp"
+            android:layout_marginEnd="@dimen/_16dp"
+            android:text="@string/select_date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_18sp" />
+
+
+        <CalendarView
+            android:id="@+id/calenderView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:background="@drawable/stroke_gray"
+            android:visibility="visible"
+
+            />
+
+        <CalendarView
+            android:id="@+id/calenderViewRound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:background="@drawable/stroke_gray"
+            android:visibility="gone"
+
+
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinSemiBold"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="@string/select_pickup_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_18sp" />
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:background="@drawable/stroke_gray"
+            android:numbersInnerTextColor="@color/theme_blue"
+            android:numbersTextColor="@color/white"
+            android:timePickerMode="spinner" />
+
+        <TimePicker
+            android:id="@+id/timePicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:numbersInnerTextColor="@color/theme_blue"
+            android:numbersTextColor="@color/white"
+            android:timePickerMode="spinner"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btSubmitDate"
+        style="@style/themeBlueButtonView"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_36dp"
+        android:layout_marginEnd="@dimen/_36dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:text="@string/submit" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btContinueDate"
+        style="@style/themeBlueButtonView"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_36dp"
+        android:layout_marginEnd="@dimen/_36dp"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:text="@string/_continue"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/loginHeader"
+                android:visibility="visible"
+                layout="@layout/common_login_header"
+                />
+
+            <include
+                android:id="@+id/loginBackHeader"
+                layout="@layout/common_toolbar"
+                android:visibility="gone"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="@dimen/_20dp"
+                android:layout_marginTop="@dimen/_50dp"
+                android:layout_marginEnd="@dimen/_20dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/llCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/stroke_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_10dp">
+
+                    <ImageView
+                        android:id="@+id/ivCountryFlag"
+                        android:layout_width="@dimen/_25dp"
+                        android:layout_height="@dimen/_25dp"
+                        android:src="@drawable/flag" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCountryCode"
+                        style="@style/textViewPoppinMediFont"
+                        android:layout_marginStart="@dimen/_2dp"
+                        android:text="+965"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_15sp" />
+
+                    <ImageView
+                        android:id="@+id/ivCountryShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10dp"
+                        android:src="@drawable/angle_small_down" />
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60dp"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etMobileNumber"
+                        style="@style/EditTextPoppinRegularFont"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:padding="@dimen/_13dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMobile"
+                        android:background="@drawable/stroke_edit_text"
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50dp"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:padding="@dimen/_5dp"
+                        android:text="@string/mobile_number"
+                        android:paddingStart="@dimen/_16dp"
+                        android:gravity="center|start"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/tv_12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobileLable"
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_marginStart="@dimen/_8dp"
+                        android:background="@color/white"
+                        android:padding="@dimen/_5dp"
+                        android:text="@string/mobile_number"
+                        android:visibility="gone"
+                        android:textColor="@color/edit_text_title"
+                        android:textSize="@dimen/tv_12sp"
+                        app:layout_constraintBottom_toTopOf="@+id/etMobileNumber"
+                        app:layout_constraintLeft_toLeftOf="@+id/etMobileNumber"
+                        app:layout_constraintTop_toTopOf="@+id/etMobileNumber" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rltTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_30dp">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+
+                    android:id="@+id/chkTermCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_toEndOf="@+id/chkTermCondition"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTermsAndConditions1"
+
+                        style="@style/textViewPoppinRegularFont"
+                        android:gravity="center"
+                        android:text="@string/term_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_14sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTermsAndConditions"
+                        style="@style/textViewPoppinSemiBold"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/term_conditions" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btGetOtp"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:text="@string/get_otp" />
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.home.ReportIssueActivity">
+
+        <include
+            android:id="@+id/headerReport"
+            layout="@layout/common_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llSubmitReport"
+            android:layout_below="@+id/headerReport">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="match_parent"
+                    android:text="@string/i_need_to_contact_support"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_16dp"
+                    android:text="@string/if_you_re_having_issues_with_a_trip_or_your_account_and_wish_to_speak_to_our_support_team_please_use_the_form_below_to_let_us_know_how_we_can_help"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_25dp"
+                    android:text="@string/phone_number_on_your_account"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/llCountry"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_50dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/stroke_black"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_10dp">
+
+                        <ImageView
+                            android:id="@+id/ivCountryFlag"
+                            android:layout_width="@dimen/_25dp"
+                            android:layout_height="@dimen/_25dp"
+                            android:src="@drawable/flag" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCountryCode"
+                            style="@style/textViewPoppinMediFont"
+                            android:layout_marginStart="@dimen/_2dp"
+                            android:text="+965"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_15sp" />
+
+                        <ImageView
+                            android:id="@+id/ivCountryShow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10dp"
+                            android:src="@drawable/angle_small_down" />
+
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60dp"
+                        android:layout_marginStart="@dimen/_20dp"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etMobileNumber"
+                            style="@style/EditTextPoppinRegularFont"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_10dp"
+                            android:gravity="center_vertical"
+                            android:inputType="number"
+                            android:padding="@dimen/_13dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvMobile"
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_50dp"
+                            android:layout_marginTop="@dimen/_10dp"
+                            android:background="@drawable/stroke_edit_text"
+                            android:gravity="center|start"
+                            android:padding="@dimen/_5dp"
+                            android:paddingStart="@dimen/_16dp"
+                            android:text="@string/mobile_number"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/tv_12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/mobileLable"
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_marginStart="@dimen/_8dp"
+                            android:background="@color/white"
+                            android:padding="@dimen/_5dp"
+                            android:text="@string/mobile_number"
+                            android:textColor="@color/edit_text_title"
+                            android:textSize="@dimen/tv_12sp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toTopOf="@+id/etMobileNumber"
+                            app:layout_constraintLeft_toLeftOf="@+id/etMobileNumber"
+                            app:layout_constraintTop_toTopOf="@+id/etMobileNumber" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_50dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/paymentIssue"
+                        android:text="@string/account_and_payment_issues"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/paymentIssue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/trip_issues"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/tripIssue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/find_lost_item"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/lostItem"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/textViewPoppinRegularFont"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/other"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/tv_18sp" />
+
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/other"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinSemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_25dp"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etDescription"
+                    style="@style/EditTextPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200dp"
+
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:maxLines="7"
+                    android:overScrollMode="always"
+                    android:padding="@dimen/_13dp"
+                    android:scrollbars="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/llImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/rl1"
+
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/iv1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/ivclose1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/_10dp"
+                            android:src="@drawable/close_12" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlAttach"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_46dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_20dp"
+                    android:layout_marginEnd="@dimen/_20dp"
+                    android:background="@drawable/stroke_black"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/llAttach"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/camera" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/textViewPoppinRegularFont"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5dp"
+                            android:text="@string/attach_a_picture"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tv_15sp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llSubmitReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btRepostIssueSubmit"
+                style="@style/themeBlueButtonView"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/_36dp"
+
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_marginEnd="@dimen/_36dp"
+                android:layout_marginBottom="@dimen/_36dp"
+
+                android:text="@string/submit" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_blue"
+    android:orientation="vertical"
+    tools:context=".ui.workaround.WorkAroundOneFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_200dp"
+            android:layout_marginTop="@dimen/_30dp"
+            android:layout_margin="@dimen/_20dp"
+            android:src="@drawable/choose_destination" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinRegularFont"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="@string/choose_your_destination"
+            android:textSize="@dimen/tv_25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/road_2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinLightFont"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="@string/book_the_whole_bus_in_a_matter_of_clicks" />
+    </LinearLayout>
+
+
+</RelativeLayout>

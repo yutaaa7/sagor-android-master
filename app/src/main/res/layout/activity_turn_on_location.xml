@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.login.TurnOnLocationActivity">
+
+        <include
+            android:id="@+id/locationHeader"
+            layout="@layout/common_login_header" />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btTurnOn"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginTop="@dimen/_70dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:text="@string/turn_on" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btTurnOff"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:background="@drawable/solid_light_gray"
+            android:text="@string/turn_off"
+            android:textColor="@color/theme_blue" />
+
+    </LinearLayout>
+</layout>

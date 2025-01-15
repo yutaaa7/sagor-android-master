@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_blue"
+    android:orientation="vertical"
+    tools:context=".ui.workaround.WorkAroundOneFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:layout_marginEnd="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+
+            android:src="@drawable/enjoy_trip" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinRegularFont"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/enjoy_the_trip"
+            android:layout_marginTop="@dimen/_30dp"
+
+            android:textSize="@dimen/tv_25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/road_4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinLightFont"
+            android:layout_marginBottom="@dimen/_20dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="@string/embark_on_an_unforgettable_journey" />
+    </LinearLayout>
+
+
+</RelativeLayout>

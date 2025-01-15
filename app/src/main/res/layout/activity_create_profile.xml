@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.login.CreateProfileActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/profileHeader"
+                layout="@layout/common_login_header"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/profileBackHeader"
+                layout="@layout/common_toolbar"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginTop="@dimen/_50dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFullName"
+                    style="@style/EditTextPoppinRegularFont"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:textSize="@dimen/tv_15sp"
+                    android:padding="@dimen/_13dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFullName"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:background="@drawable/stroke_edit_text"
+                    android:gravity="center|start"
+                    android:padding="@dimen/_5dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:text="@string/full_name"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/tv_12sp"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fullNameLable"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:background="@color/white"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/full_name"
+                    android:textColor="@color/edit_text_title"
+                    android:textSize="@dimen/tv_12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/etFullName"
+                    app:layout_constraintLeft_toLeftOf="@+id/etFullName"
+                    app:layout_constraintTop_toTopOf="@+id/etFullName" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60dp"
+
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
+                    style="@style/EditTextPoppinRegularFont"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/tv_15sp"
+
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:padding="@dimen/_13dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEmail"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:background="@drawable/stroke_edit_text"
+                    android:gravity="center|start"
+                    android:padding="@dimen/_5dp"
+                    android:paddingStart="@dimen/_16dp"
+                    android:text="@string/email"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/tv_12sp"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/emailLable"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:background="@color/white"
+                    android:padding="@dimen/_5dp"
+                    android:text="@string/email"
+                    android:textColor="@color/edit_text_title"
+                    android:textSize="@dimen/tv_12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/etEmail"
+                    app:layout_constraintLeft_toLeftOf="@+id/etEmail"
+                    app:layout_constraintTop_toTopOf="@+id/etEmail" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/textViewPoppinRegularFont"
+                android:layout_marginTop="@dimen/_35dp"
+                android:text="@string/gender"
+                android:textColor="@color/gray_AAADB2"
+                android:textSize="@dimen/tv_15sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/rb1"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10dp"
+                    android:src="@drawable/checked_checkbox"/>
+
+                 <androidx.appcompat.widget.AppCompatTextView
+                     style="@style/textViewPoppinRegularFont"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="@string/male"
+                     android:layout_gravity="center"
+                     android:textColor="@color/black"
+                     android:textSize="@dimen/tv_16sp" />
+
+                <ImageView
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10dp"
+                    android:src="@drawable/default_checkbox"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+             </LinearLayout>
+
+                <!-- <LinearLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="@dimen/_15dp"
+                     android:orientation="horizontal">-->
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btCreateProfile"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:text="@string/_continue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btSaveProfile"
+            style="@style/themeBlueButtonView"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:text="Save" />
+    </RelativeLayout>
+</layout>

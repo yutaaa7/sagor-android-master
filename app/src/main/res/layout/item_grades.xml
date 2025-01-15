@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout
+    android:id="@+id/llGrades"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llGradesBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/_10dp"
+        android:background="@drawable/stroke_theme_blue"
+        android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGrade1"
+        style="@style/textViewPoppinSemiBold"
+        android:layout_gravity="center"
+        android:layout_toEndOf="@+id/ivSchoolImage"
+        android:text="1"
+        android:visibility="gone"
+        android:textColor="@color/gray_7E7E7E"
+        android:textSize="@dimen/tv_16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGradeName"
+        style="@style/textViewPoppinSemiBold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/ivSchoolImage"
+        android:text=""
+        android:minLines="2"
+        android:layout_marginTop="@dimen/_10dp"
+        android:textColor="@color/gray_7E7E7E"
+        android:textSize="@dimen/tv_16sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_3dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:visibility="visible"
+        android:background="@drawable/dotted_line"/>
+
+</LinearLayout>
+</layout>

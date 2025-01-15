@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llCountryView"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:layout_marginStart="@dimen/_16dp">
+
+
+        <ImageView
+            android:id="@+id/ivCountryFlag"
+            android:layout_width="@dimen/_25dp"
+            android:layout_height="@dimen/_25dp"
+            android:layout_alignParentStart="true"
+
+            android:layout_centerVertical="true"
+            android:src="@drawable/flag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountryName"
+            style="@style/textViewPoppinRegularFont"
+            android:gravity="center"
+            android:text="Kuwait"
+
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_toEndOf="@id/ivCountryFlag"
+            android:textColor="@color/gray_7E7E7E"
+            android:textSize="@dimen/tv_16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCountryCode"
+            style="@style/textViewPoppinRegularFont"
+            android:gravity="center"
+            android:text="+965"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10dp"
+            android:textColor="@color/gray_7E7E7E"
+            android:textSize="@dimen/tv_16sp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dp"
+        android:background="@color/gray_707070"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_20dp"/>
+
+
+
+
+</LinearLayout>
+
+</layout>

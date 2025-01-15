@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_confirm_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_white"
+            android:orientation="vertical"
+            app:behavior_hideable="false"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_16dp">
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:src="@drawable/back_arrow" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/textViewPoppinMediFont"
+                    android:layout_centerInParent="true"
+                    android:text="@string/select_your_ride"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_18sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.checkout.CheckOutPaymentMethodsActivity">
+
+        <include
+            android:id="@+id/paymentMethodHeader"
+            layout="@layout/common_toolbar" />
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPaymentModes"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/paymentMethodHeader"
+            />
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/paymentMethodHeader"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlCredit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:background="@drawable/stroke_gray">
+
+                <RadioButton
+                    android:id="@+id/ivCreditRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_20dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCreditDebit"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ivCreditRadioButton"
+                    android:gravity="center|start"
+                    android:text="@string/credit_debit_card"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_20dp"
+                    android:layout_toStartOf="@+id/ivForward"
+                    android:src="@drawable/apple" />
+
+
+                <ImageView
+                    android:id="@+id/ivForward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_20dp"
+                    android:src="@drawable/right"
+                    app:tint="@color/black" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlKnet"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:background="@drawable/stroke_gray">
+
+                <RadioButton
+                    android:id="@+id/ivKnetRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:layout_marginStart="@dimen/_20dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvKnet"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ivKnetRadioButton"
+                    android:gravity="center|start"
+                    android:text="@string/k_net"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/tv_16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_20dp"
+                    android:layout_toStartOf="@+id/ivForward2"
+                    android:src="@drawable/apple" />
+
+
+                <ImageView
+                    android:id="@+id/ivForward2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_20dp"
+                    android:src="@drawable/right"
+                    app:tint="@color/black" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_36dp"
+            android:layout_marginEnd="@dimen/_36dp"
+            android:layout_marginBottom="@dimen/_36dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlPayments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_10dp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPaymentText"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/tvPrice"
+                    android:text="@string/will_be_paid_with_apple_pay"
+                    android:textColor="@color/gray_7E7E7E"
+                    android:textSize="@dimen/tv_15sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    style="@style/textViewPoppinRegularFont"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="KWD 25.00"
+                    android:textColor="@color/gray_7E7E7E"
+                    android:textSize="@dimen/tv_15sp" />
+
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btSavePaymentMethod"
+                style="@style/themeBlueButtonView"
+                android:layout_width="match_parent"
+
+                android:text="@string/save" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

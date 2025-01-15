@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_blue"
+    android:orientation="vertical"
+    tools:context=".ui.LanguageSelectActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinRegularFont"
+
+            android:text="@string/welcome_to" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:layout_weight="2.2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/road_1" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_weight="2.5">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinLightFont"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="@string/select_your_preferred_language" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_35dp"
+            android:layout_marginEnd="@dimen/_35dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btEnglish"
+                style="@style/buttonView"
+                android:layout_weight="1"
+
+                android:layout_width="@dimen/_0dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:text="@string/english"
+                android:textColor="@color/theme_blue" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btArebic"
+                style="@style/lightBlueButtonView"
+                android:layout_weight="1"
+
+                android:layout_width="@dimen/_0dp"
+                android:text="@string/other_lang"
+                android:textColor="@color/theme_blue" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

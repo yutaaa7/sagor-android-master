@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+
+        android:layout_marginEnd="@dimen/_16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/textViewPoppinSemiBold"
+            android:layout_centerInParent="true"
+            android:text="@string/select_country"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancelCountryDialog"
+            style="@style/textViewPoppinRegularFont"
+            android:layout_alignParentEnd="true"
+            android:padding="@dimen/_10dp"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_18sp" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etMobileNumber"
+        style="@style/EditTextPoppinRegularFont"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_64dp"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_46dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:background="@drawable/solid_gray_with_stroke"
+        android:hint="@string/search"
+        android:paddingStart="@dimen/_20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_7E7E7E" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:background="@color/gray_707070" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCountriesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30dp" />
+
+
+</LinearLayout>

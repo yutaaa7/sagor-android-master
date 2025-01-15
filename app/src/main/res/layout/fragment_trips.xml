@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.home.TripsFragment">
+
+   <include
+       android:id="@+id/tripTootlbar"
+       layout="@layout/common_toolbar"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tripsTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabSelectedTextColor="@color/theme_blue"
+        app:tabIndicatorColor="@color/theme_blue"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/tripsViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15dp"
+        android:layoutDirection="locale"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/rlPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/blue_circle">
+
+            <ImageView
+                android:id="@+id/ivLocationCategory"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/places_icon" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocationCategory"
+            style="@style/textViewPoppinRegularFont"
+            android:layout_gravity="center"
+            android:text="@string/destination"
+            android:textColor="@color/black"
+
+            android:textSize="@dimen/tv_16sp" />
+
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3dp"
+            android:background="@color/theme_blue"
+            android:layout_marginTop="@dimen/_10dp"/>
+
+
+    </LinearLayout>
+</layout>
